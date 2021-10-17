@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <meta charset="utf-8" />
+      <title>Selecting an Element!</title>
+      <meta name="description" content="" />
+      <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body>
+      <div class="wrapper">
+        <ul class="container">
+          <li class="box" id="box-1"></li>
+          <li class="box box-to-select" id="box-2"></li>
+          <li class="box box-to-select" id="box-3"></li>
+          <li class="box box-to-select" id="box-4"></li>
+          <li class="box" id="box-5"></li>
+          <li class="box box-to-select-2" id="box-6"></li>
+          <li class="box box-to-select-2" id="box-7"></li>
+          <li class="box box-to-select-2" id="box-8"></li>
+        </ul>
+      </div>
+    
+      <script>
+         
+         //Get element by id
+      firstBox = document.getElementById("box-1");
+      //Event Listener to fire a function on clicking
+      firstBox.addEventListener("click", function (event) {
+      //we take the event and use the dom to change its color
+        event.currentTarget.style.backgroundColor = "red";
+      });
+
+      //Get element by className
+      var boxes = document.getElementsByClassName("box-to-select");
+      //Iterate boxes through a For of loop to add functionallity
+      for (const element of boxes) {
+      //Event Listener to fire a function on clicking
+        element.addEventListener("click", function (e) {
+         //we take the event and use the dom to change its color
+          event.currentTarget.style.backgroundColor = "blue";
+        });
+      }
+
+      //Get Element with qeurySelector
+      queryFifthBox = document.querySelector("#box-5");
+      //Event Listener to fire a function on clicking
+      queryFifthBox.addEventListener("click", function (event) {
+      //we take the event and use the dom to change its color
+        event.currentTarget.style.backgroundColor = "yellow";
+      });
+
+      //Get element by querySelectorAll
+      const queryBoxes = document.querySelectorAll(".box-to-select-2");
+      //Iterate boxes through a For of loop to add functionallity
+      for (const element of queryBoxes) {
+      //Event Listener to fire a function on clicking          
+        element.addEventListener("click", function (e) {
+         //we take the event and use the dom to change its color        
+          event.currentTarget.style.backgroundColor = "green";
+        });
+      }
+         
+      </script>
+    </body>
+    
+    </html>
